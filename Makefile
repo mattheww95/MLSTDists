@@ -1,9 +1,11 @@
 BIN=MLSTDists
 TEST_DATA=test.tab
+CC=gcc
+ARGS=-std=gnu99 -mtune native -Ofast
 
 
 bin/$(BIN): src/*.c
-	gcc -Ofast -mtune=native -march=native -o $@ $^
+	$(CC) $(ARGS) -o $@ $^
 
 
 .PHONY: test_mat
